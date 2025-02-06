@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class product extends Model
+class Customer extends Model
 {
     use HasFactory;
 
-    protected $id = 'product_id';
-    protected $primaryKey = 'product_id';
     protected $guarded = [];
+    protected $primaryKey = 'customer_id';
 
     public function transactions()
     {
-        return $this->hasMany(Transaction::class, 'product_id', 'product_id');
+        return $this->hasMany(Transaction::class, 'customer_id', 'customer_id');
     }
 }
